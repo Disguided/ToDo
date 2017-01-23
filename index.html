@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="js/todo.js"></script>
+<body data-ng-app="ToDoL" data-ng-controller="todoCtrl">
+
+<h1>My Todo List</h1>
+
+<form data-ng-submit="todoAdd()">
+    <input type="text" ng-model="todo.todoInput" size="20" placeholder="New">
+    <input type="submit" value="New">
+</form>
+
+<br>
+<div data-ng-repeat="x in todoList">
+    <input type="checkbox" data-ng-model="x.done" name="todoText"> <span >{{x.todoText}}</span> <button data-ng-click="update(x.todoText)">update</button>
+</div>
+<p><button data-ng-click="remove()">delete</button></p>
+</body>
+</html>
